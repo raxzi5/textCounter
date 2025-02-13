@@ -1,0 +1,30 @@
+Project 2: Word Counter 
+Created by: Rachel Zheng
+Submitted to: Xiao Qin
+Last date updated: 2/12/25
+
+**********************************USAGE************************************
+
+gcc -o pwordcount pwordcount.c functions.child
+./pwordcount text.txt
+
+**********************************SUMMARY*********************************
+
+--main(): 
+This program creates a parent and child process and allows parallel processing
+by utilizing pipes as a form of communication. The parent process reads a text 
+file and sends the contents of the file to the child process. The child process 
+reads the number of words and returns the count to the parent process. 
+
+--readfile(): opens and loads the content of a text file and returns a pointer 
+to the contents stored in the file. Argument is a pointer to the file (*filename)
+
+--count_words(): utilizes a for loop to count the number of words and returns 
+an integer. Argument is a pointer to the contents saved (*msg)
+
+*************************************DESIGN********************************
+
+The main file (pwordcount) contains the forked process and the pipe 
+interactions. The sub file (functions) contains the functions not a part of the
+interaction between the two processes (readfile & count_words)
+
